@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     private static final String TAG = MainActivity.class.getSimpleName();
     private MainActivityContract.Presenter presenter;
 
-    Button mbtnStrategy1, mbtnBuilder1;
+    Button mbtnStrategy1, mbtnBuilder1, mbtnAdatper1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     private void findView() {
         mbtnStrategy1 = (Button) findViewById(R.id.btnStrategy1);
         mbtnBuilder1 = (Button) findViewById(R.id.btnBuilder1);
+        mbtnAdatper1 = (Button) findViewById(R.id.btnAdatper1);
 
         mbtnStrategy1.setOnClickListener(new Strategy1BtnOnClickListener());
         mbtnBuilder1.setOnClickListener(new Builder1BtnOnClickListener());
+        mbtnAdatper1.setOnClickListener(new Adatper1BtnOnClickListener());
 //        mbtnStrategy.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -59,6 +61,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         @Override
         public void onClick(View v) {
             presenter.execBuilder1();
+        }
+    }
+
+    private class Adatper1BtnOnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            presenter.execAdapter1();
         }
     }
 }

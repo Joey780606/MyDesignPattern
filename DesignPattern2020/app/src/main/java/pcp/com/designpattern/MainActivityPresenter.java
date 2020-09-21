@@ -2,6 +2,9 @@ package pcp.com.designpattern;
 
 import android.content.Context;
 
+import Adapter1.BlackMan;
+import Adapter1.BlackmanTranslator;
+import Adapter1.TaiwanMan;
 import Builder1.MacBookSeller;
 import Builder1.MacbookPro;
 import Builder1.MacbookPro_2018;
@@ -53,5 +56,16 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
                 .buildKeyboard(new MacbookPro.Keyboard("英文"))
                 .build();
         view.showLog(String.format("Builder dream spec=%s", dreamMacbook.toString()));
+    }
+
+    @Override
+    public void execAdapter1() {
+        BlackMan blackMan = new BlackMan("black", view);
+        blackMan.helloEnglish();
+        blackMan.selfIntroEnglish();
+
+        TaiwanMan taiwanMan = new TaiwanMan(new BlackmanTranslator(blackMan.name, view));
+        taiwanMan.hello();
+        taiwanMan.selfIntro();
     }
 }

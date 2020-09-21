@@ -1,7 +1,7 @@
 package pcp.com.designpattern;
 
 public class MainActivityContract {
-    interface View {
+    public interface View {
         void init();
         void showLog(String info);
     }
@@ -10,5 +10,6 @@ public class MainActivityContract {
         void init();
         void execStrategy1();
         void execBuilder1();
+        void execAdapter1();
     }
 }

@@ -14,25 +14,25 @@
         app:layout_constraintGuide_percent="0.50"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_h25"
+        android:id="@+id/gl_h30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.30"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_h50"
+        android:id="@+id/gl_h60"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.50"/>
+        app:layout_constraintGuide_percent="0.60"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_h75"
+        android:id="@+id/gl_h90"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.90"/>
 
     <Button
         android:id="@+id/btnStrategy1"
@@ -52,5 +52,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/gl_v50"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gl_v50"
+        app:layout_constraintTop_toTopOf="@+id/gl_h90" />
+
+    <Button
+        android:id="@+id/btnAdatper1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Adapter 1"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/gl_v50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gl_h30" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
