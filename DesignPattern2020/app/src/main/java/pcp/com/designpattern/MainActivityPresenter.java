@@ -8,6 +8,9 @@ import Adapter1.TaiwanMan;
 import Builder1.MacBookSeller;
 import Builder1.MacbookPro;
 import Builder1.MacbookPro_2018;
+import Proxy1.EstateAgent;
+import Proxy1.IBuyHouse;
+import Proxy1.LittleEngineer;
 import Strategy1.Calculator;
 
 import static Strategy1.Calculator.DoType;
@@ -67,5 +70,15 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
         TaiwanMan taiwanMan = new TaiwanMan(new BlackmanTranslator(blackMan.name, view));
         taiwanMan.hello();
         taiwanMan.selfIntro();
+    }
+
+    @Override
+    public void execProxy1() {
+        IBuyHouse littleEngineer = new LittleEngineer(view);
+        IBuyHouse estateAgent = new EstateAgent(littleEngineer, view);
+        estateAgent.findHouse();
+        estateAgent.priceTooHigh();
+        estateAgent.defendPrice();
+        estateAgent.finish();
     }
 }

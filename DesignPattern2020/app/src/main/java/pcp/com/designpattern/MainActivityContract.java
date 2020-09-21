@@ -11,5 +11,6 @@ public class MainActivityContract {
         void execStrategy1();
         void execBuilder1();
         void execAdapter1();
+        void execProxy1();
     }
 }
