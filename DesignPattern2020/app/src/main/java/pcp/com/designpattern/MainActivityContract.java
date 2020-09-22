@@ -13,5 +13,6 @@ public class MainActivityContract {
         void execAdapter1();
         void execProxy1();
         void execPrototype1();
+        void execFacade1();
     }
 }

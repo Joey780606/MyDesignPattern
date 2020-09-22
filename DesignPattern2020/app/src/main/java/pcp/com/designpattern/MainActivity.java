@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     private static final String TAG = MainActivity.class.getSimpleName();
     private MainActivityContract.Presenter presenter;
 
-    Button mbtnStrategy1, mbtnBuilder1, mbtnAdatper1, mbtnProxy1, mbtnPrototype1;
+    Button mbtnStrategy1, mbtnBuilder1, mbtnAdatper1, mbtnProxy1, mbtnPrototype1, mbtnFacade1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +40,14 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         mbtnAdatper1 = (Button) findViewById(R.id.btnAdatper1);
         mbtnProxy1 = (Button) findViewById(R.id.btnProxy1);
         mbtnPrototype1 = (Button) findViewById(R.id.btnPrototype1);
+        mbtnFacade1 = (Button) findViewById(R.id.btnFacade1);
 
         mbtnStrategy1.setOnClickListener(new Strategy1BtnOnClickListener());
         mbtnBuilder1.setOnClickListener(new Builder1BtnOnClickListener());
         mbtnAdatper1.setOnClickListener(new Adatper1BtnOnClickListener());
         mbtnProxy1.setOnClickListener(new Proxy1BtnOnClickListener());
         mbtnPrototype1.setOnClickListener(new Prototype1BtnOnClickListener());
+        mbtnFacade1.setOnClickListener(new Facade1BtnOnClickListener());
 //        mbtnStrategy.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -87,6 +89,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         @Override
         public void onClick(View v) {
             presenter.execPrototype1();
+        }
+    }
+
+    private class Facade1BtnOnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            presenter.execFacade1();
         }
     }
 }

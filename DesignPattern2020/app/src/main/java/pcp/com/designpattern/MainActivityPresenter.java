@@ -8,6 +8,7 @@ import Adapter1.TaiwanMan;
 import Builder1.MacBookSeller;
 import Builder1.MacbookPro;
 import Builder1.MacbookPro_2018;
+import Facade1.Facade;
 import Prototype1.Sensor;
 import Proxy1.EstateAgent;
 import Proxy1.IBuyHouse;
@@ -107,5 +108,14 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
         for(int i = 0; i < 5000; i=i+500) {
             view.showLog(String.format("Sensors id=%d", sensors[i].getID()));
         }
+    }
+
+    @Override
+    public void execFacade1() {
+        Facade facade = new Facade(view);
+        view.showLog("Method A: ");
+        facade.MethodA();
+        view.showLog("Method B: ");
+        facade.MethodB();
     }
 }
