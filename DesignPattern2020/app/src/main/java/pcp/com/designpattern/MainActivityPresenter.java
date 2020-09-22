@@ -8,6 +8,7 @@ import Adapter1.TaiwanMan;
 import Builder1.MacBookSeller;
 import Builder1.MacbookPro;
 import Builder1.MacbookPro_2018;
+import Prototype1.Sensor;
 import Proxy1.EstateAgent;
 import Proxy1.IBuyHouse;
 import Proxy1.LittleEngineer;
@@ -80,5 +81,31 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
         estateAgent.priceTooHigh();
         estateAgent.defendPrice();
         estateAgent.finish();
+    }
+
+    @Override
+    public void execPrototype1() {
+        Sensor[] sensors = new Sensor[5000];
+        sensors[0] = new Sensor();
+        sensors[0].setID(0);
+        sensors[0].setName("Sensor第一版");
+        sensors[0].setNickname("我的空氣探測器");
+        sensors[0].setVersion("1.0.0");
+        sensors[0].setWifiID("MYSENSORWIFIID1.0.0");
+        sensors[0].setWifiPass("THISisWiFiPasssOuO");
+        sensors[0].setData("None");
+
+        for(int i = 1; i < 5000; i++) {
+            try {
+                sensors[i] = (Sensor)sensors[0].clone();
+                sensors[i].setID(i);
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for(int i = 0; i < 5000; i=i+500) {
+            view.showLog(String.format("Sensors id=%d", sensors[i].getID()));
+        }
     }
 }

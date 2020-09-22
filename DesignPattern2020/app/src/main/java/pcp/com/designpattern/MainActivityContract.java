@@ -12,5 +12,6 @@ public class MainActivityContract {
         void execBuilder1();
         void execAdapter1();
         void execProxy1();
+        void execPrototype1();
     }
 }
