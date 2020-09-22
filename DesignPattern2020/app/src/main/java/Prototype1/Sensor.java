@@ -1,5 +1,12 @@
 package Prototype1;
 
+/*
+ Author: Joey
+ Data: 20/09/22
+ Explanation:
+   1. 主說明在 Prototype.java , Sensor.java 是繼承 Prototype.java, 並 Override clone
+ */
+
 public class Sensor extends Prototype {
     // 這時不會主動跳出要叫你顯示 clone的 @override,有可能是因為 Prototype 是 class, 不是 interface, 也不是 implement interface的情況
     // 所以不會主動跳出,而是有需要時可以自己擴增 (有點像 Activity要自行 @override onResume() 的樣子)
