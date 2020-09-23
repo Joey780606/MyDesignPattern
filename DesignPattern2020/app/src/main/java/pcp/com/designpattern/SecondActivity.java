@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity implements SecondActivityContract.View {
     private static final String TAG = SecondActivity.class.getSimpleName();
     private SecondActivityContract.Presenter presenter;
-    Button mbtnState1;
+    Button mbtnState1, mbtnMemento1;
     TextView mtvPrior, mtvNext;
 
     @Override
@@ -28,12 +28,15 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
 
     private void findView() {
         mbtnState1 = (Button) findViewById(R.id.btnState1);
+        mbtnMemento1 = (Button) findViewById(R.id.btnMemento1);
+
         mtvPrior = (TextView) findViewById(R.id.tvPrior);
         mtvNext = (TextView) findViewById(R.id.tvNext);
 
         mtvPrior.setOnClickListener(new PriorTvOnClickListener());
         mtvNext.setOnClickListener(new NextTvOnClickListener());
         mbtnState1.setOnClickListener(new State1BtnOnClickListener());
+        mbtnMemento1.setOnClickListener(new Memento1BtnOnClickListener());
     }
 
     @Override
@@ -70,10 +73,17 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
         }
     }
 
-    private class State1BtnOnClickListener implements View.OnClickListener{
+    private class State1BtnOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             presenter.execState1();
+        }
+    }
+
+    private class Memento1BtnOnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            presenter.execMemento1();
         }
     }
 }
