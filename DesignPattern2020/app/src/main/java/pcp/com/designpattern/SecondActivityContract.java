@@ -8,5 +8,6 @@ public class SecondActivityContract {
 
     interface Presenter {
         void init();
+        void execState1();
     }
 }

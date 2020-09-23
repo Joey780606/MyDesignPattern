@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
 
     @Override
     public void showLog(String info) {
-
+        Log.v(TAG, info);
     }
 
     private void findView() {

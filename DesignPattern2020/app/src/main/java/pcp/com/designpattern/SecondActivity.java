@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity implements SecondActivityContract.View {
     private static final String TAG = SecondActivity.class.getSimpleName();
     private SecondActivityContract.Presenter presenter;
+    Button mbtnState1;
     TextView mtvPrior, mtvNext;
 
     @Override
@@ -24,11 +27,13 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
     }
 
     private void findView() {
+        mbtnState1 = (Button) findViewById(R.id.btnState1);
         mtvPrior = (TextView) findViewById(R.id.tvPrior);
         mtvNext = (TextView) findViewById(R.id.tvNext);
 
         mtvPrior.setOnClickListener(new PriorTvOnClickListener());
         mtvNext.setOnClickListener(new NextTvOnClickListener());
+        mbtnState1.setOnClickListener(new State1BtnOnClickListener());
     }
 
     @Override
@@ -38,7 +43,7 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
 
     @Override
     public void showLog(String info) {
-
+        Log.v(TAG, info);
     }
 
     private class PriorTvOnClickListener implements View.OnClickListener {
@@ -62,6 +67,13 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
             i.setClass(SecondActivity.this, ThirdActivity.class); //OKab
             startActivity(i);
             finish();
+        }
+    }
+
+    private class State1BtnOnClickListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            presenter.execState1();
         }
     }
 }
