@@ -8,6 +8,9 @@ import Adapter1.TaiwanMan;
 import Builder1.MacBookSeller;
 import Builder1.MacbookPro;
 import Builder1.MacbookPro_2018;
+import Composite1.Component;
+import Composite1.Composite;
+import Composite1.Leaf;
 import Facade1.Facade;
 import Flyweight1.CustomSetting;
 import Flyweight1.Macbook;
@@ -86,6 +89,42 @@ public class SecondActivityPresenter implements SecondActivityContract.Presenter
 
         Macbook goodbook2 = factory.getMacbook(Macbook.Spec.HIGH);
         view.showLog(goodbook2.toString());
+    }
+
+    @Override
+    public void execComposite1() {
+        // 先建立各部門,由大部門見到小部門
+        Component big = new Composite("大公司", view);
+
+        Component mid1 = new Composite("子公司1", view);
+        Component mid2 = new Composite("子公司2", view);
+
+        Component small1 = new Leaf("部門1", view);
+        Component small2 = new Leaf("部門2", view);
+        Component small3 = new Leaf("部門3", view);
+        Component small4 = new Leaf("部門4", view);
+
+        big.add(mid1);
+        big.add(mid2);
+
+        mid1.add(small1);
+        mid1.add(small2);
+
+        mid2.add(small3);
+        mid2.add(small4);
+
+        Component small5 = new Leaf("部門5", view);
+
+        small1.add(small5);
+
+        view.showLog("------- 大公司 -------");
+
+        big.display(1);
+        big.command("開發快一點");
+
+        view.showLog("------- 大公司 -------");
+        mid2.display(1);
+        mid2.command("大老闆說Q4要完成");
     }
 
 }

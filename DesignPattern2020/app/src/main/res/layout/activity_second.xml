@@ -85,4 +85,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl_h30" />
 
+    <Button
+        android:id="@+id/btnComposite1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Composite 1"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gl_v50"
+        app:layout_constraintTop_toTopOf="@+id/gl_h30" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

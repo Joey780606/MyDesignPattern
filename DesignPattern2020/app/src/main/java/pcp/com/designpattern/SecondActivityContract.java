@@ -11,5 +11,6 @@ public class SecondActivityContract {
         void execState1();
         void execMemento1();
         void execFlyweight1();
+        void execComposite1();
     }
 }
