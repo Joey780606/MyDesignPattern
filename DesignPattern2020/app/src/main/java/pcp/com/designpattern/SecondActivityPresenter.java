@@ -9,6 +9,9 @@ import Builder1.MacBookSeller;
 import Builder1.MacbookPro;
 import Builder1.MacbookPro_2018;
 import Facade1.Facade;
+import Flyweight1.CustomSetting;
+import Flyweight1.Macbook;
+import Flyweight1.MacbookFactory;
 import Memento1.ComputerCareTaker;
 import Memento1.ComputerOriginator;
 import Prototype1.Sensor;
@@ -65,6 +68,24 @@ public class SecondActivityPresenter implements SecondActivityContract.Presenter
         originator.setSystem("windows");    //將原資料系統改成 windows
         careTaker.saveMemento(originator.save());  //這裡注意, originator.save()是有新建(new)一個 ComputerMemento 的元件
         view.showLog(careTaker.getSave(1).getSystem());
+    }
+
+    @Override
+    public void execFlyweight1() {
+        MacbookFactory factory = new MacbookFactory(view);  //先建立工廠
+        Macbook goodbook = factory.getMacbook(Macbook.Spec.HIGH);
+        view.showLog(goodbook.toString());
+
+        CustomSetting superSetting = new CustomSetting();
+        superSetting.setCpu("i9");
+        superSetting.setMemory(32);
+        superSetting.setStorage(1024);
+
+        Macbook superMacbook = factory.getCustomMacbook(superSetting);
+        view.showLog(superMacbook.toString());
+
+        Macbook goodbook2 = factory.getMacbook(Macbook.Spec.HIGH);
+        view.showLog(goodbook2.toString());
     }
 
 }

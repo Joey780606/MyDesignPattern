@@ -10,5 +10,6 @@ public class SecondActivityContract {
         void init();
         void execState1();
         void execMemento1();
+        void execFlyweight1();
     }
 }
