@@ -3,14 +3,15 @@ package Iterator1;
 /*
  Author: Joey
  Data: 20/09/25
- Explanation: 總介紹在
-   CompanyA.java - A公司,裡面有多名員工,先建一個List放公司的員工
+ Explanation: 總介紹在 Employee.java
+   CompanyA.java - A公司,裡面有多名員工,先建一個List放公司的員工, 因為此類 implements Aggregate, 所以經由new CompanyAIterator(this) 來把 CompanyA
+     與 Iterator做結合
  */
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompanyA implements Aggregate {
+public class CompanyA implements Aggregate {    //Concrete aggregate, (aggregate有聚合)的意思,這可能指要聚合的物件(像公司的員工等)
     List<Employee> employees = new ArrayList<>();   //CompanyA 與 Employee有關聯(Association)關係
 
     public CompanyA() {

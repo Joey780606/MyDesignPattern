@@ -1,5 +1,12 @@
 package Iterator1;
 
+/*
+ Author: Joey
+ Data: 20/09/25
+ Explanation: 總介紹在 Employee.java
+   CompanyAIterator.java - Iterator介面的實作
+ */
+
 public class CompanyAIterator implements Iterator {
 
     private CompanyA companyA;
