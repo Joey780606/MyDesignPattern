@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity implements SecondActivityContract.View {
     private static final String TAG = SecondActivity.class.getSimpleName();
     private SecondActivityContract.Presenter presenter;
-    Button mbtnState1, mbtnMemento1, mbtnFlyweight1, mbtnComposite1;
+    Button mbtnState1, mbtnMemento1, mbtnFlyweight1, mbtnComposite1, mbtnIterator1;
     TextView mtvPrior, mtvNext;
 
     @Override
@@ -31,6 +31,7 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
         mbtnMemento1 = (Button) findViewById(R.id.btnMemento1);
         mbtnFlyweight1 = (Button) findViewById(R.id.btnFlyweight1);
         mbtnComposite1 = (Button) findViewById(R.id.btnComposite1);
+        mbtnIterator1 = (Button) findViewById(R.id.btnIterator1);
 
         mtvPrior = (TextView) findViewById(R.id.tvPrior);
         mtvNext = (TextView) findViewById(R.id.tvNext);
@@ -41,6 +42,7 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
         mbtnMemento1.setOnClickListener(new Memento1BtnOnClickListener());
         mbtnFlyweight1.setOnClickListener(new Flyweight1BtnOnClickListener());
         mbtnComposite1.setOnClickListener(new Composite1BtnOnClickListener());
+        mbtnIterator1.setOnClickListener(new Iterator1BtnOnClickListener());
     }
 
     @Override
@@ -102,6 +104,13 @@ public class SecondActivity extends AppCompatActivity implements SecondActivityC
         @Override
         public void onClick(View v) {
             presenter.execComposite1();
+        }
+    }
+
+    private class Iterator1BtnOnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            presenter.execIterator1();
         }
     }
 }

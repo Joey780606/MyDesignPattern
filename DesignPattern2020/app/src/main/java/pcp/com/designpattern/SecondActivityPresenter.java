@@ -15,6 +15,9 @@ import Facade1.Facade;
 import Flyweight1.CustomSetting;
 import Flyweight1.Macbook;
 import Flyweight1.MacbookFactory;
+import Iterator1.CompanyA;
+import Iterator1.Employee;
+import Iterator1.Iterator;
 import Memento1.ComputerCareTaker;
 import Memento1.ComputerOriginator;
 import Prototype1.Sensor;
@@ -125,6 +128,18 @@ public class SecondActivityPresenter implements SecondActivityContract.Presenter
         view.showLog("------- 大公司 -------");
         mid2.display(1);
         mid2.command("大老闆說Q4要完成");
+    }
+
+    @Override
+    public void execIterator1() {
+        CompanyA companyA = new CompanyA();
+
+        Iterator iterator = companyA.CreateIterator();  // 重要,魔法在這行, 經由這行,把CompanyA(implements Aggregate) 與 Iterator結合在一起
+
+        while(!iterator.IsDone()) {
+            view.showLog( ((Employee)iterator.CurrentItem()).getName() + " : " + ((Employee)iterator.CurrentItem()).getTitle() +  " 發薪水囉～");
+            iterator.Next();
+        }
     }
 
 }
