@@ -1,16 +1,16 @@
 package pcp.com.designpattern;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class ThirdActivity extends AppCompatActivity implements ThirdActivityContract.View {
-    private static final String TAG = ThirdActivity.class.getSimpleName();
-    private ThirdActivityContract.Presenter presenter;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FourthActivity extends AppCompatActivity implements FourthActivityContract.View {
+    private static final String TAG = FourthActivity.class.getSimpleName();
+    private FourthActivityContract.Presenter presenter;
     TextView mtvPrior, mtvNext;
 
     @Override
@@ -19,7 +19,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
         setContentView(R.layout.activity_third);
 
         findView();
-        presenter = new ThirdActivityPresenter(getApplicationContext(), this);
+        presenter = new FourthActivityPresenter(getApplicationContext(), this);
 
         presenter.init();
     }
@@ -48,7 +48,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
             Intent i = new Intent();
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            i.setClass(ThirdActivity.this, SecondActivity.class); //OKab
+            i.setClass(FourthActivity.this, ThirdActivity.class); //OKab
             startActivity(i);
             finish();
         }
@@ -60,7 +60,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
             Intent i = new Intent();
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            i.setClass(ThirdActivity.this, FourthActivity.class); //OKab
+            i.setClass(FourthActivity.this, MainActivity.class); //OKab
             startActivity(i);
             finish();
         }
