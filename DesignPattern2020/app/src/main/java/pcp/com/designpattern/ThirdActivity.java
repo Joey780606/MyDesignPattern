@@ -13,7 +13,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
     private static final String TAG = ThirdActivity.class.getSimpleName();
     private ThirdActivityContract.Presenter presenter;
     TextView mtvPrior, mtvNext;
-    Button mbtnChainResponsibility;
+    Button mbtnChainResponsibility, mbtnMediator1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,13 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
     private void findView() {
         mtvPrior = (TextView) findViewById(R.id.tvPrior);
         mtvNext = (TextView) findViewById(R.id.tvNext);
-        mbtnChainResponsibility = (Button) findViewById(R.id.btnChainResponsi);
+        mbtnChainResponsibility = (Button) findViewById(R.id.btnChainResponsi1);
+        mbtnMediator1 = (Button) findViewById(R.id.btnMediator1);
 
         mtvPrior.setOnClickListener(new PriorTvOnClickListener());
         mtvNext.setOnClickListener(new NextTvOnClickListener());
-        mbtnChainResponsibility.setOnClickListener(new ChainResponsibilityClickListener());
+        mbtnChainResponsibility.setOnClickListener(new ChainResponsibility1OnClickListener());
+        mbtnMediator1.setOnClickListener(new Mediator1OnClickListener());
     }
 
     private class PriorTvOnClickListener implements View.OnClickListener {
@@ -70,10 +72,17 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
         }
     }
 
-    class ChainResponsibilityClickListener implements View.OnClickListener {
+    class ChainResponsibility1OnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             presenter.execChainResponsibility1();
+        }
+    }
+
+    class Mediator1OnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            presenter.execMediator1();
         }
     }
 }
