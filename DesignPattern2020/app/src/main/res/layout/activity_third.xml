@@ -53,4 +53,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/gl_v50"
         app:layout_constraintTop_toTopOf="@+id/gl_h90" />
+
+    <Button
+        android:id="@+id/btnChainResponsi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chain Responsi 1"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/gl_v50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ThirdActivity extends AppCompatActivity implements ThirdActivityContract.View {
     private static final String TAG = ThirdActivity.class.getSimpleName();
     private ThirdActivityContract.Presenter presenter;
     TextView mtvPrior, mtvNext;
+    Button mbtnChainResponsibility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,11 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
     private void findView() {
         mtvPrior = (TextView) findViewById(R.id.tvPrior);
         mtvNext = (TextView) findViewById(R.id.tvNext);
+        mbtnChainResponsibility = (Button) findViewById(R.id.btnChainResponsi);
 
         mtvPrior.setOnClickListener(new PriorTvOnClickListener());
         mtvNext.setOnClickListener(new NextTvOnClickListener());
+        mbtnChainResponsibility.setOnClickListener(new ChainResponsibilityClickListener());
     }
 
     private class PriorTvOnClickListener implements View.OnClickListener {
@@ -63,6 +67,13 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
             i.setClass(ThirdActivity.this, FourthActivity.class); //OKab
             startActivity(i);
             finish();
+        }
+    }
+
+    class ChainResponsibilityClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            presenter.execChainResponsibility1();
         }
     }
 }

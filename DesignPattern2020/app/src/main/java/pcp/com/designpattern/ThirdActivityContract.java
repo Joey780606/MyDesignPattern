@@ -8,5 +8,6 @@ public class ThirdActivityContract {
 
     interface Presenter {
         void init();
+        void execChainResponsibility1();
     }
 }

@@ -3,7 +3,7 @@ package Bridge1;
 /*
  Author: Joey
  Data: 20/09/26
- Explanation: 總介紹在
+ Explanation: 總介紹在 View.java
    Resources.java - 是 interface,
  */
 

@@ -3,7 +3,7 @@ package Bridge1;
 /*
  Author: Joey
  Data: 20/09/26
- Explanation: 總介紹在
+ Explanation: 總介紹在 View.java
    Bag.java - 跟 Book 一樣, 實作 Resources interface
  */
 
