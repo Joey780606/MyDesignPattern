@@ -64,4 +64,9 @@ public class ThirdActivityPresenter implements ThirdActivityContract.Presenter {
         wei.bossHelp(bad);
     }
 
+    @Override
+    public void Interpreter1() {
+
+    }
+
 }
