@@ -13,5 +13,6 @@ public class SecondActivityContract {
         void execFlyweight1();
         void execComposite1();
         void execIterator1();
+        void execBridge1();
     }
 }

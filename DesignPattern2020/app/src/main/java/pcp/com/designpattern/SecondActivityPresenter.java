@@ -5,6 +5,10 @@ import android.content.Context;
 import Adapter1.BlackMan;
 import Adapter1.BlackmanTranslator;
 import Adapter1.TaiwanMan;
+import Bridge1.Bag;
+import Bridge1.Book;
+import Bridge1.FewView;
+import Bridge1.FullView;
 import Builder1.MacBookSeller;
 import Builder1.MacbookPro;
 import Builder1.MacbookPro_2018;
@@ -140,6 +144,25 @@ public class SecondActivityPresenter implements SecondActivityContract.Presenter
             view.showLog( ((Employee)iterator.CurrentItem()).getName() + " : " + ((Employee)iterator.CurrentItem()).getTitle() +  " 發薪水囉～");
             iterator.Next();
         }
+    }
+
+    @Override
+    public void execBridge1() {
+        FewView fewView = new FewView();
+        view.showLog("---- 簡單包包說明 ----");
+        fewView.setResources(new Bag(view));
+        fewView.show();     // 只要 fewView 設好 Resources,就可以show出資料
+        view.showLog("---- 簡單書本說明 ----");
+        fewView.setResources(new Book(view));
+        fewView.show();
+
+        FullView fullView = new FullView();
+        view.showLog("---- 詳細包包說明 ----");
+        fullView.setResources(new Bag(view));
+        fullView.show();
+        view.showLog("---- 詳細書本說明 ----");
+        fullView.setResources(new Book(view));
+        fullView.show();
     }
 
 }
