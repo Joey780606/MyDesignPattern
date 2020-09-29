@@ -10,6 +10,6 @@ public class ThirdActivityContract {
         void init();
         void execChainResponsibility1();
         void execMediator1();
-        void Interpreter1();
+        void execInterpreter1();
     }
 }

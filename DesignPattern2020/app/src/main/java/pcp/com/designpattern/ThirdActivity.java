@@ -92,7 +92,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
 
         @Override
         public void onClick(View v) {
-            presenter.Interpreter1();
+            presenter.execInterpreter1();
         }
     }
 }
