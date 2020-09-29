@@ -2,6 +2,11 @@ package pcp.com.designpattern;
 
 import android.content.Context;
 
+import AbstractFactory1.AbstractFactory;
+import AbstractFactory1.Audi;
+import AbstractFactory1.BMW;
+import AbstractFactory1.JeepFactory;
+import AbstractFactory1.SUVFactory;
 import ChainOfResponsibility1.Handler;
 import ChainOfResponsibility1.Manager;
 import ChainOfResponsibility1.Trouble;
@@ -113,6 +118,27 @@ public class ThirdActivityPresenter implements ThirdActivityContract.Presenter {
         view.showLog("----- 女生 -----");
         woman.visit(temperature);
         woman.visit(airQuality);
+    }
+
+    @Override
+    public void execAbstractFactory1() {
+        AbstractFactory factorySUV = new SUVFactory();
+        view.showLog("----- SUV Factory -----");
+
+        Audi suvAudi = factorySUV.createAudi();
+        view.showLog(suvAudi.getBrand() + "的" + suvAudi.getType());
+
+        BMW suvBMW = factorySUV.createBMW();
+        view.showLog(suvBMW.getBrand() + "的" + suvBMW.getType());
+
+        AbstractFactory factoryJeep = new JeepFactory();
+        view.showLog("----- Jeep Factory -----");
+
+        Audi jeepAudi = factoryJeep.createAudi();
+        view.showLog(jeepAudi.getBrand() + "的" + jeepAudi.getType());
+
+        BMW jeepBMW = factoryJeep.createBMW();
+        view.showLog(jeepBMW.getBrand() + "的" + jeepBMW.getType());
     }
 
 }

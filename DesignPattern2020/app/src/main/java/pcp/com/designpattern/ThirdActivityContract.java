@@ -12,5 +12,6 @@ public class ThirdActivityContract {
         void execMediator1();
         void execInterpreter1();
         void execVisitor1();
+        void execAbstractFactory1();
     }
 }

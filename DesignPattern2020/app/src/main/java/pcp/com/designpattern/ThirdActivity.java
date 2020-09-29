@@ -13,7 +13,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
     private static final String TAG = ThirdActivity.class.getSimpleName();
     private ThirdActivityContract.Presenter presenter;
     TextView mtvPrior, mtvNext;
-    Button mbtnChainResponsibility, mbtnMediator1, mbtnInterpreter1, mbtnVisitor1;
+    Button mbtnChainResponsibility, mbtnMediator1, mbtnInterpreter1, mbtnVisitor1, mbtnAbstractFactory1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
         mbtnMediator1 = (Button) findViewById(R.id.btnMediator1);
         mbtnInterpreter1 = (Button) findViewById(R.id.btnInterpreter1);
         mbtnVisitor1 = (Button) findViewById(R.id.btnVisitor1);
+        mbtnAbstractFactory1 = (Button) findViewById(R.id.btnAbstractFactory1);
 
         mtvPrior.setOnClickListener(new PriorTvOnClickListener());
         mtvNext.setOnClickListener(new NextTvOnClickListener());
@@ -50,6 +51,7 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
         mbtnMediator1.setOnClickListener(new Mediator1OnClickListener());
         mbtnInterpreter1.setOnClickListener(new Interpreter1OnClickListener());
         mbtnVisitor1.setOnClickListener(new Visitor1OnClickListener());
+        mbtnAbstractFactory1.setOnClickListener(new AbstractFactory1OnClickListener());
     }
 
     private class PriorTvOnClickListener implements View.OnClickListener {
@@ -101,6 +103,13 @@ public class ThirdActivity extends AppCompatActivity implements ThirdActivityCon
         @Override
         public void onClick(View v) {
             presenter.execVisitor1();
+        }
+    }
+
+    class AbstractFactory1OnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            presenter.execAbstractFactory1();
         }
     }
 }
