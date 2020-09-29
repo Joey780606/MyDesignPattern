@@ -11,7 +11,7 @@ package Interpreter1;
    3. NonterminalExpression.java, 繼承第2項,顯示 "非終端的解釋器"
    4. TerminalExpression.java, 繼承第2項,顯示 "終端的解釋器"
 
-   5. ThirdActivityPresenter.java > execInterpreter1() 來執行 Interpreter1().
+   5. ThirdActivityPresenter.java > execInterpreter1() 來執行 Interpreter1(). (這個頗重要的)
  */
 
 public class BrowserContext {

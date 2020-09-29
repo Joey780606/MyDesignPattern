@@ -12,6 +12,11 @@ import Interpreter1.TerminalExpression;
 import Mediator1.Boss;
 import Mediator1.PM;
 import Mediator1.Programmer;
+import Visitor1.AirQuality;
+import Visitor1.Man;
+import Visitor1.Temperature;
+import Visitor1.Visit;
+import Visitor1.Woman;
 
 
 public class ThirdActivityPresenter implements ThirdActivityContract.Presenter {
@@ -91,6 +96,23 @@ public class ThirdActivityPresenter implements ThirdActivityContract.Presenter {
 
         // 非終端的丟進非終端解釋
         nonterminal.interpret(context);
+    }
+
+    @Override
+    public void execVisitor1() {
+        Temperature temperature = new Temperature();
+        AirQuality airQuality = new AirQuality();
+
+        Visit man = new Man(view);
+        Visit woman = new Woman(view);
+
+        view.showLog("----- 男生 -----");
+        man.visit(temperature);
+        man.visit(airQuality);
+
+        view.showLog("----- 女生 -----");
+        woman.visit(temperature);
+        woman.visit(airQuality);
     }
 
 }

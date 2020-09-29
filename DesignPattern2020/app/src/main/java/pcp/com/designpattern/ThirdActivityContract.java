@@ -11,5 +11,6 @@ public class ThirdActivityContract {
         void execChainResponsibility1();
         void execMediator1();
         void execInterpreter1();
+        void execVisitor1();
     }
 }
