@@ -141,4 +141,9 @@ public class ThirdActivityPresenter implements ThirdActivityContract.Presenter {
         view.showLog(jeepBMW.getBrand() + "的" + jeepBMW.getType());
     }
 
+    @Override
+    public void execSingleton1() {
+
+    }
+
 }

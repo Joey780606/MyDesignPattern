@@ -13,5 +13,6 @@ public class ThirdActivityContract {
         void execInterpreter1();
         void execVisitor1();
         void execAbstractFactory1();
+        void execSingleton1();
     }
 }
