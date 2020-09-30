@@ -6,6 +6,7 @@ package Iterator1;
  Explanation: 總介紹在 Employee.java
    CompanyA.java - A公司,裡面有多名員工,先建一個List放公司的員工, 因為此類 implements Aggregate, 所以經由new CompanyAIterator(this) 來把 CompanyA
      與 Iterator做結合
+     這是 UML 裡的 Concrete aggregate, (aggregate有聚合)的意思,這Employee就是需聚合的物件 (公司員工等)
  */
 
 import java.util.ArrayList;

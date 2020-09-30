@@ -5,9 +5,9 @@ package Builder1;
  Data: 20/09/10
  Explanation:
    1. Website: https://ithelp.ithome.com.tw/articles/10204732
-   2. MacbookPro.java , Product
-      MacbookProBuilder.java , Builder (abstract class)
-      MacbookPro_2018.java, 此為 MacbookProBuilder 這個 abstract class 的 concrete class,實作詳細功能
+   2. MacbookPro.java , Product (UML的 Product)
+      MacbookProBuilder.java , Builder (abstract class)  (UML的 Builder, 此時就跟 MacbookPro class產生依賴)
+      MacbookPro_2018.java, 此為 MacbookProBuilder 這個 abstract class 的 concrete class,實作詳細功能  (UML的 Concrete builder)
       MacBookSeller.java, 此應為 Director(指揮者),由指揮者控制建造者,來建立產品
       MainActivityPresenter.java, 實作
  */

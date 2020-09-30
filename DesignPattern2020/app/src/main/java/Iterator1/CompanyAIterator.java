@@ -4,7 +4,7 @@ package Iterator1;
  Author: Joey
  Data: 20/09/25
  Explanation: 總介紹在 Employee.java
-   CompanyAIterator.java - Iterator介面的實作
+   CompanyAIterator.java - Iterator介面的實作, UML 裡的 Concrete Iterator
  */
 
 public class CompanyAIterator implements Iterator {
