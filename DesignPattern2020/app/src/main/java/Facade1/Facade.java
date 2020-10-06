@@ -8,6 +8,10 @@ import pcp.com.designpattern.MainActivityContract;
  Explanation: 總介紹在 Facade.java
    這會把雜亂無章的類別,依實際需要做整理後,用另幾個function再組成較有意義的function
    MainActivityPresenter.java > execFacade1() 這個會來實作此 Pattern
+   1. SubClassOne - 雜亂無章的類別範例1
+   2. SubClassTwo - 雜亂無章的類別範例2
+   3. SubClassThree - 雜亂無章的類別範例3
+   4. SubClassOne - 雜亂無章的類別範例4
  */
 
 public class Facade {

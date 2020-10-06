@@ -22,10 +22,10 @@ public class DoubleCheckLock {
     private DoubleCheckLock() {}
 
     public static DoubleCheckLock getInstance() {
-        // 第一層判斷為了避免不必要的同步
+        // 第一層判斷為了避免不必要的同步,請參上方
         if(instance == null) {
             synchronized (DoubleCheckLock.class) {  //對 class 進行 synchronized
-                // 第二層判斷為了避免不必要的同步
+
                 if(instance == null) {
                     instance = new DoubleCheckLock();
                 }

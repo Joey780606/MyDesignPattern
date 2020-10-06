@@ -10,7 +10,7 @@ import pcp.com.designpattern.ThirdActivityContract;
       關連, 可依 class關心的是什麼,來對各Visit設定不同的處理, 像女生比較關心空氣品質,就對空氣品質做較多的處理
  */
 
-public class Woman implements Visit {
+public class Woman implements VisitI {
     ThirdActivityContract.View view;
 
     public Woman(ThirdActivityContract.View view) {

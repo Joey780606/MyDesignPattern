@@ -20,7 +20,7 @@ import Mediator1.Programmer;
 import Visitor1.AirQuality;
 import Visitor1.Man;
 import Visitor1.Temperature;
-import Visitor1.Visit;
+import Visitor1.VisitI;
 import Visitor1.Woman;
 
 
@@ -108,8 +108,8 @@ public class ThirdActivityPresenter implements ThirdActivityContract.Presenter {
         Temperature temperature = new Temperature();
         AirQuality airQuality = new AirQuality();
 
-        Visit man = new Man(view);
-        Visit woman = new Woman(view);
+        VisitI man = new Man(view);
+        VisitI woman = new Woman(view);
 
         view.showLog("----- 男生 -----");
         man.visit(temperature);

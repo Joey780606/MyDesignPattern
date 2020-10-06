@@ -17,7 +17,7 @@ public class AirQuality extends Weather {
     }
 
     @Override
-    public void accept(Visit visit) {
+    public void accept(VisitI visit) {
         visit.visit(this);
     }
 }
